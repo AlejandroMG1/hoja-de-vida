@@ -41,12 +41,26 @@ const SideBar = ({ active, setSideBarOpen, bRef }) => {
           <br />
           <span className='text-xs'>alemg-dev@hotmail.com</span>
           <div className='flex' style={{ fontSize: '30px' }}>
-            <div className='mr-2 social-icon'>
+            <button
+              type='button'
+              className='mr-2 social-icon'
+              onClick={() => {
+                window.open('https://github.com/AlejandroMG1');
+              }}
+            >
               <FontAwesomeIcon icon={faGithub} />
-            </div>
-            <div className='social-icon'>
+            </button>
+            <button
+              type='button'
+              className='social-icon'
+              onClick={() => {
+                window.open(
+                  'https://www.linkedin.com/in/alejandro-garcia-794b15171/'
+                );
+              }}
+            >
               <FontAwesomeIcon icon={faLinkedin} />
-            </div>
+            </button>
           </div>
         </div>
       </div>
