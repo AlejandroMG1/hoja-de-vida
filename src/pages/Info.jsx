@@ -26,8 +26,8 @@ const Info = () => {
         type='button'
         className='rounded-full bg-blue-400'
         style={{
-          width: '40px',
-          height: '40px',
+          width: '50px',
+          height: '50px',
           position: 'fixed',
           bottom: '15px',
           right: '15px',
@@ -36,7 +36,7 @@ const Info = () => {
           window.scrollTo(0, 0);
         }}
       >
-        <FontAwesomeIcon icon={faAngleDoubleUp} />
+        <FontAwesomeIcon icon={faAngleDoubleUp} style={{ fontSize: '25px' }} />
       </button>
     </div>
   );

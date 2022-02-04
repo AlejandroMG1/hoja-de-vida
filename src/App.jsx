@@ -64,7 +64,7 @@ const App = () => {
       content: (
         <>
           <li>Español: Hablante nativo.</li>
-          <li>inglés: nivel B2</li>
+          <li>Inglés: nivel B2</li>
         </>
       ),
       sectionRef: useRef(),
