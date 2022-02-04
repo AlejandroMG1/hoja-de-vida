@@ -1,37 +1,26 @@
 import React from 'react';
 import 'components/SideBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faTimes,
-  faGraduationCap,
-  faBriefcase,
-  faGamepad,
-  faCommentDots,
-  faCertificate,
-} from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import profilePic from 'assets/foto.jpg';
 import SectionButton from 'components/SectionButton';
+import { useGlobalState } from 'state-pool';
 
-const SideBar = ({ active, setSideBarOpen }) => {
+const SideBar = ({ active, setSideBarOpen, bRef }) => {
+  const [sections] = useGlobalState('sections');
   const changeSidebarState = () => {
     setSideBarOpen(!active);
   };
-  const sections = [
-    { tittle: 'Información academica', icon: faGraduationCap },
-    { tittle: 'Información Laboral', icon: faBriefcase },
-    { tittle: 'Hobbies', icon: faGamepad },
-    { tittle: 'Idiomas', icon: faCommentDots },
-    { tittle: 'Cursos y certificaciones', icon: faCertificate },
-  ];
   return (
     <div
       className={`bg-blue-400 shadow-lg ${
         active ? 'nav-menu active' : 'nav-menu'
       }`}
+      ref={bRef}
     >
       <FontAwesomeIcon
-        className='my-auto ml-3 lg:hidden'
+        className='my-auto ml-3 xl:hidden'
         icon={faTimes}
         style={{
           fontSize: '24px',
@@ -41,13 +30,9 @@ const SideBar = ({ active, setSideBarOpen }) => {
         }}
         onClick={changeSidebarState}
       />
-      <div className='w-full flex p-3' style={{ width: '85%' }}>
+      <div className='w-full flex p-3'>
         <div style={{ width: '40%' }}>
-          <img
-            src={profilePic}
-            alt='profile pic'
-            style={{ borderRadius: '50%' }}
-          />
+          <img src={profilePic} alt='profile pic' className='rounded-full' />
         </div>
         <div className='pl-3'>
           <span className='text-lg text-white leading-7'>
@@ -67,7 +52,14 @@ const SideBar = ({ active, setSideBarOpen }) => {
       </div>
       <div className='px-3'>
         {sections.map((sec) => {
-          return <SectionButton tittle={sec.tittle} icon={sec.icon} />;
+          return (
+            <SectionButton
+              tittle={sec.tittle}
+              icon={sec.icon}
+              sectionRef={sec.sectionRef}
+              key={sec.key}
+            />
+          );
         })}
       </div>
     </div>

@@ -9,7 +9,7 @@ const Header = ({ hRef, sideBarOpen, setSideBarOpen }) => {
 
   return (
     <div
-      className='w-full bg-blue-400 lg:hidden text-center py-3 flex'
+      className='w-full bg-blue-400 xl:hidden text-center py-3 flex'
       ref={hRef}
       style={{
         position: 'fixed',
