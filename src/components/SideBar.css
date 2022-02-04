@@ -1,0 +1,18 @@
+.nav-menu {
+  width: 345px;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.social-icon :hover{
+  color: white;
+}
