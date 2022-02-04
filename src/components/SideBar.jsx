@@ -1,11 +1,11 @@
 import React from 'react';
-import 'components/SideBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import profilePic from 'assets/foto.jpg';
 import SectionButton from 'components/SectionButton';
 import { useGlobalState } from 'state-pool';
+import SocialButton from 'components/SocialButton';
 
 const SideBar = ({ active, setSideBarOpen, bRef }) => {
   const [sections] = useGlobalState('sections');
@@ -41,26 +41,14 @@ const SideBar = ({ active, setSideBarOpen, bRef }) => {
           <br />
           <span className='text-xs'>alemg-dev@hotmail.com</span>
           <div className='flex' style={{ fontSize: '30px' }}>
-            <button
-              type='button'
-              className='mr-2 social-icon'
-              onClick={() => {
-                window.open('https://github.com/AlejandroMG1');
-              }}
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </button>
-            <button
-              type='button'
-              className='social-icon'
-              onClick={() => {
-                window.open(
-                  'https://www.linkedin.com/in/alejandro-garcia-794b15171/'
-                );
-              }}
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </button>
+            <SocialButton
+              icon={faGithub}
+              link='https://github.com/AlejandroMG1'
+            />
+            <SocialButton
+              icon={faLinkedin}
+              link='https://www.linkedin.com/in/alejandro-garcia-794b15171/'
+            />
           </div>
         </div>
       </div>
