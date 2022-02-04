@@ -23,8 +23,6 @@ const PublicLayout = () => {
   };
   const moveContent = () => {
     if (!sideBarOpen) {
-      // eslint-disable-next-line no-console
-      console.log(width);
       setSideBarOpen(width >= 1280);
     }
     setSideBarWidth(
