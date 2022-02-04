@@ -22,16 +22,20 @@ const PublicLayout = () => {
     }
   };
   const moveContent = () => {
+    if (!sideBarOpen) {
+      // eslint-disable-next-line no-console
+      console.log(width);
+      setSideBarOpen(width >= 1280);
+    }
     setSideBarWidth(
       `${sideBarOpen && width >= 768 ? sideBarRef.current.clientWidth : 0}px`
     );
   };
   useEffect(() => {
-    setSideBarOpen(width >= 1280);
     moveContent();
     setTHeight();
     window.addEventListener('resize', setTHeight);
-  }, []);
+  }, [width]);
   useEffect(() => {
     moveContent();
   }, [sideBarOpen]);
