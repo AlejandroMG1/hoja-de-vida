@@ -75,9 +75,9 @@ const App = () => {
       icon: faCertificate,
       content: (
         <>
-          <li>Udemi, Django beginner, 2018</li>
-          <li>Udemi, Django advanced, 2018</li>
-          <li>Udemi, Make apliactions with ionic 4, 2019</li>
+          <li>Udemy, Django beginner, 2018</li>
+          <li>Udemy, Django advanced, 2018</li>
+          <li>Udemy, Make aplications with ionic 4, 2019</li>
         </>
       ),
       sectionRef: useRef(),
